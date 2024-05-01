@@ -20,7 +20,7 @@ export const load: PageServerLoad = async ({
 
   if (params.slug === "free_plan") {
     // plan with no stripe_price_id. Redirect to account home
-    throw redirect(303, "/account")
+    throw redirect(303, "/dashboard")
   }
 
   const { error: idError, customerId } = await getOrCreateCustomerId({
@@ -52,7 +52,7 @@ export const load: PageServerLoad = async ({
       ],
       customer: customerId,
       mode: "subscription",
-      success_url: `${url.origin}/account`,
+      success_url: `${url.origin}/dashboard`,
       cancel_url: `${url.origin}/account/billing`,
     })
     checkoutUrl = stripeSession.url

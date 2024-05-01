@@ -7,9 +7,9 @@ export const load: LayoutServerLoad = async ({
 }) => {
   const session = await getSession()
 
-  // if the user is already logged in return them to the account page
+  // if the user is already logged in return them to the dashboard
   if (session) {
-    throw redirect(303, "/account")
+    throw redirect(303, "/dashboard")
   }
 
   return {

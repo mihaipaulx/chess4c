@@ -15,4 +15,6 @@
   })
 </script>
 
-<h1 class="text-2xl font-bold m-6">{message}</h1>
+<div class="container mx-auto py-[20vh]">
+  <h1 class="text-2xl font-bold m-6">{message}</h1>
+</div>

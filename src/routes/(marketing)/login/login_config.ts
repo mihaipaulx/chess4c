@@ -1,7 +1,8 @@
 import { ThemeSupa } from "@supabase/auth-ui-shared"
 import type { Provider } from "@supabase/supabase-js"
 
-export const oauthProviders = ["github"] as Provider[]
+// export const oauthProviders = ["google", "apple"] as Provider[]
+export const oauthProviders = [] as Provider[]
 
 // use the css variables from DaisyUI to style Supabase auth template
 export const sharedAppearance = {

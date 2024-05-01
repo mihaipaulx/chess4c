@@ -18,12 +18,12 @@
   }
 </script>
 
-<div class="drawer lg:drawer-open">
+<div class="drawer lg:drawer-open container mx-auto py-[20vh] min-h-[100vh]">
   <input id="admin-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
     <div class="navbar bg-base-100 lg:hidden">
       <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl" href="/">SaaS Starter</a>
+        <a class="btn btn-ghost normal-case text-xl" href="/">Account</a>
       </div>
       <div class="flex-none">
         <div class="dropdown dropdown-end">
@@ -45,64 +45,23 @@
         </div>
       </div>
     </div>
-    <div class="container px-6 lg:px-12 py-3 lg:py-6">
+    <div class="container py-3 lg:py-6">
       <slot />
     </div>
   </div>
 
-  <div class="drawer-side">
+  <div class="mr-10">
     <label for="admin-drawer" class="drawer-overlay" />
     <ul
-      class="menu menu-lg p-4 w-80 min-h-full bg-base-100 lg:border-r text-primary"
+      class="menu menu-lg w-80 min-h-full bg-base-100 text-primary px-0"
     >
       <li>
         <div
           class="normal-case menu-title text-xl font-bold text-primary flex flex-row"
         >
-          <a href="/" class="grow">Saas Starter</a>
+          Account
           <label for="admin-drawer" class="lg:hidden ml-3"> &#x2715; </label>
         </div>
-      </li>
-      <li>
-        <a
-          href="/account"
-          class={adminSection === "home" ? "active" : ""}
-          on:click={closeDrawer}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-            /></svg
-          >
-          Home
-        </a>
-      </li>
-      <li>
-        <a
-          href="/account/billing"
-          class={adminSection === "billing" ? "active" : ""}
-          on:click={closeDrawer}
-        >
-          <svg
-            class="h-5 w-5"
-            viewBox="0 0 24 24"
-            stroke="none"
-            fill="currentColor"
-          >
-            <path
-              d="M18,1H6A3,3,0,0,0,3,4V22a1,1,0,0,0,1.8.6L6.829,19.9l1.276,2.552a1,1,0,0,0,.8.549.981.981,0,0,0,.89-.4L12,19.667,14.2,22.6a.983.983,0,0,0,.89.4,1,1,0,0,0,.8-.549L17.171,19.9,19.2,22.6a1,1,0,0,0,.8.4,1,1,0,0,0,1-1V4A3,3,0,0,0,18,1Zm1,18-1.2-1.6a.983.983,0,0,0-.89-.4,1,1,0,0,0-.8.549l-1.276,2.552L12.8,17.4a1,1,0,0,0-1.6,0L9.171,20.105,7.9,17.553A1,1,0,0,0,7.09,17a.987.987,0,0,0-.89.4L5,19V4A1,1,0,0,1,6,3H18a1,1,0,0,1,1,1ZM17,9a1,1,0,0,1-1,1H8A1,1,0,0,1,8,8h8A1,1,0,0,1,17,9Zm-4,4a1,1,0,0,1-1,1H8a1,1,0,0,1,0-2h4A1,1,0,0,1,13,13Z"
-            />
-          </svg>
-          Billing
-        </a>
       </li>
       <li>
         <a
@@ -110,7 +69,7 @@
           class={adminSection === "settings" ? "active" : ""}
           on:click={closeDrawer}
         >
-          <svg class="h-5 w-5" viewBox="0 0 24 24" stroke="none" fill="none">
+          <!-- <svg class="h-5 w-5" viewBox="0 0 24 24" stroke="none" fill="none">
             <g id="Interface / Settings">
               <g id="Vector">
                 <path
@@ -129,12 +88,30 @@
                 />
               </g>
             </g>
-          </svg>
+          </svg> -->
           Settings
         </a>
       </li>
-
-      <li class="mt-auto">
+      <li>
+        <a
+          href="/account/billing"
+          class={adminSection === "billing" ? "active" : ""}
+          on:click={closeDrawer}
+        >
+          <!-- <svg
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            stroke="none"
+            fill="currentColor"
+          >
+            <path
+              d="M18,1H6A3,3,0,0,0,3,4V22a1,1,0,0,0,1.8.6L6.829,19.9l1.276,2.552a1,1,0,0,0,.8.549.981.981,0,0,0,.89-.4L12,19.667,14.2,22.6a.983.983,0,0,0,.89.4,1,1,0,0,0,.8-.549L17.171,19.9,19.2,22.6a1,1,0,0,0,.8.4,1,1,0,0,0,1-1V4A3,3,0,0,0,18,1Zm1,18-1.2-1.6a.983.983,0,0,0-.89-.4,1,1,0,0,0-.8.549l-1.276,2.552L12.8,17.4a1,1,0,0,0-1.6,0L9.171,20.105,7.9,17.553A1,1,0,0,0,7.09,17a.987.987,0,0,0-.89.4L5,19V4A1,1,0,0,1,6,3H18a1,1,0,0,1,1,1ZM17,9a1,1,0,0,1-1,1H8A1,1,0,0,1,8,8h8A1,1,0,0,1,17,9Zm-4,4a1,1,0,0,1-1,1H8a1,1,0,0,1,0-2h4A1,1,0,0,1,13,13Z"
+            />
+          </svg> -->
+          Billing
+        </a>
+      </li>
+      <li>
         <a href="/account/sign_out" class="mt-auto text-base">Sign Out</a>
       </li>
     </ul>

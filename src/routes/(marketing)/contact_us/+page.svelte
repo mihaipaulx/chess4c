@@ -8,34 +8,10 @@
 
   const formFields = [
     {
-      id: "first_name",
-      label: "First Name *",
-      inputType: "text",
-      autocomplete: "given-name",
-    },
-    {
-      id: "last_name",
-      label: "Last Name *",
-      inputType: "text",
-      autocomplete: "family-name",
-    },
-    {
       id: "email",
-      label: "Email *",
+      label: "Email",
       inputType: "email",
       autocomplete: "email",
-    },
-    {
-      id: "phone",
-      label: "Phone Number",
-      inputType: "tel",
-      autocomplete: "tel",
-    },
-    {
-      id: "company",
-      label: "Company Name",
-      inputType: "text",
-      autocomplete: "organization",
     },
     {
       id: "message",
@@ -64,33 +40,21 @@
 </script>
 
 <div
-  class="flex flex-col lg:flex-row mx-auto my-4 min-h-[70vh] place-items-center lg:place-items-start place-content-center"
+  class="mx-auto my-4 mx-auto place-items-center text-center content-center min-h-[100vh] py-[20vh]"
 >
   <div
-    class="max-w-[400px] lg:max-w-[500px] flex flex-col place-content-center p-4 lg:mr-8 lg:mb-8 lg:min-h-[70vh]"
+    class="flex flex-col"
   >
     <div class="px-6">
-      <h1 class="text-2xl lg:text-4xl font-bold mb-4">Contact Us</h1>
-      <p class="text-lg">Talk to one of our service professionals to:</p>
-      <ul class="list-disc list-outside pl-6 py-4 space-y-1">
-        <li class="">Get a live demo</li>
-        <li class="">Discuss your specific needs</li>
-        <li>Get a quote</li>
-        <li>Answer any technical questions you have</li>
-      </ul>
-      <p>Once you complete the form, we'll reach out to you! *</p>
-      <p class="text-sm pt-8">
-        *Not really for this demo page, but you should say something like that
-        😉
-      </p>
+      <h1 class="text-2xl lg:text-4xl font-bold">Contact Us</h1>
     </div>
   </div>
 
   <div
-    class="flex flex-col flex-grow m-4 lg:ml-10 min-w-[300px] stdphone:min-w-[360px] max-w-[400px] place-content-center lg:min-h-[70vh]"
+    class="flex flex-col mx-auto flex-grow min-w-[500px] stdphone:min-w-[360px] max-w-[400px] pt-10"
   >
     {#if showSuccess}
-      <div class="flex flex-col place-content-center lg:min-h-[70vh]">
+      <div class="flex flex-col">
         <div
           class="card card-bordered shadow-lg py-6 px-6 mx-2 lg:mx-0 lg:p-6 mb-10"
         >

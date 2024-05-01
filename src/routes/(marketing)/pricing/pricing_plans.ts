@@ -3,41 +3,42 @@ export const defaultPlanId = "free"
 export const pricingPlans = [
   {
     id: "free",
-    name: "Free",
-    description: "A free plan to get you started!",
+    name: "Forever free",
+    description: "Forever free",
     price: "$0",
     priceIntervalName: "per month",
     stripe_price_id: null,
-    features: ["MIT Licence", "Fast Performance", "Stripe Integration"],
-  },
-  {
-    id: "pro",
-    name: "Pro",
-    description:
-      "A plan to test the purchase experience. Try buying this with the test credit card 4242424242424242.",
-    price: "$5",
-    priceIntervalName: "per month",
-    stripe_price_id: "price_1NkdZCHMjzZ8mGZnRSjUm4yA",
-    stripe_product_id: "prod_OXj1CcemGMWOlU",
     features: [
-      "Everything in Free",
-      "Support us with fake money",
-      "Test the purchase experience",
+      "3 puzzles per day",
+      "No ads",
     ],
   },
   {
-    id: "enterprise",
-    name: "Enterprise",
+    id: "standard",
+    name: "Standard",
     description:
-      "A plan to test the upgrade expereince. Try buying this with the test credit card 4242424242424242.",
-    price: "$15",
-    priceIntervalName: "per month",
-    stripe_price_id: "price_1Nkda2HMjzZ8mGZn4sKvbDAV",
-    stripe_product_id: "prod_OXj20YNpHYOXi7",
+      "Fits most users",
+    price: "$4",
+    priceIntervalName: "Per month",
+    stripe_price_id: "price_1P5SG6P67vmO0MZAxkxNuClp",
+    stripe_product_id: "prod_PvIpwlXP8F00EJ",
     features: [
-      "Everything in Pro",
-      "Try the 'upgrade plan' UX",
-      "Still actually free!",
+      "20 puzzles per day",
+      "No ads",
+    ],
+  },
+  {
+    id: "full",
+    name: "Full",
+    description:
+      "For unlimited access",
+    price: "$8",
+    priceIntervalName: "Per month",
+    stripe_price_id: "price_1P5SGnP67vmO0MZA50rYcXw1",
+    stripe_product_id: "prod_PvIpwlXP8F00EJ",
+    features: [
+      "Unlimited puzzles per day",
+      "No ads",
     ],
   },
 ]

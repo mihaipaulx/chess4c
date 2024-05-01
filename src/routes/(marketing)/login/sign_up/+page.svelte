@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../../config"
   import { Auth } from "@supabase/auth-ui-svelte"
   import { sharedAppearance, oauthProviders } from "../login_config"
 
@@ -6,7 +7,8 @@
 </script>
 
 <svelte:head>
-  <title>Sign up</title>
+  <title>{WebsiteName}</title>
+  <meta name="description" content="{WebsiteName} - Sign Up" />
 </svelte:head>
 
 <h1 class="text-2xl font-bold mb-6">Sign Up</h1>
