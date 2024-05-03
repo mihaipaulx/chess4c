@@ -28,19 +28,14 @@
       label: "Name",
       initialValue: profile?.full_name ?? "",
       placeholder: "Your full name",
-      maxlength: 50,
+      maxlength: 50
     },
     {
-      id: "companyName",
-      label: "Company Name",
-      initialValue: profile?.company_name ?? "",
-      maxlength: 50,
-    },
-    {
-      id: "website",
-      label: "Company Website",
-      initialValue: profile?.website ?? "",
-      maxlength: 50,
-    },
+      id: "username",
+      label: "Username",
+      initialValue: profile?.username ?? "",
+      placeholder: "Your username",
+      maxlength: 50
+    }
   ]}
 />

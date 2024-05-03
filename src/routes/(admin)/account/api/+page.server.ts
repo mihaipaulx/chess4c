@@ -199,8 +199,7 @@ export const actions = {
 
     const formData = await request.formData()
     const fullName = formData.get("fullName") as string
-    const companyName = formData.get("companyName") as string
-    const website = formData.get("website") as string
+    const username = formData.get("username") as string
 
     let validationError
     const fieldMaxTextLength = 50
@@ -209,40 +208,30 @@ export const actions = {
       validationError = "Name is required"
       errorFields.push("fullName")
     } else if (fullName.length > fieldMaxTextLength) {
-      validationError = `Name must be less than ${fieldMaxTextLength} characters`
+      validationError = `Name must have less than ${fieldMaxTextLength} characters`
       errorFields.push("fullName")
     }
-    if (!companyName) {
+    if (!username) {
       validationError =
-        "Company name is required. If this is a hobby project or personal app, please put your name."
-      errorFields.push("companyName")
-    } else if (companyName.length > fieldMaxTextLength) {
-      validationError = `Company name must be less than ${fieldMaxTextLength} characters`
-      errorFields.push("companyName")
-    }
-    if (!website) {
-      validationError =
-        "Company website is required. An app store URL is a good alternative if you don't have a website."
-      errorFields.push("website")
-    } else if (website.length > fieldMaxTextLength) {
-      validationError = `Company website must be less than ${fieldMaxTextLength} characters`
-      errorFields.push("website")
+        "Username is required"
+      errorFields.push("username")
+    } else if (username.length > fieldMaxTextLength) {
+      validationError = `Username must have less than ${fieldMaxTextLength} characters`
+      errorFields.push("username")
     }
     if (validationError) {
       return fail(400, {
         errorMessage: validationError,
         errorFields,
         fullName,
-        companyName,
-        website,
+        username
       })
     }
 
     const { error } = await supabase.from("profiles").upsert({
       id: session?.user.id,
       full_name: fullName,
-      company_name: companyName,
-      website: website,
+      username: username,
       updated_at: new Date(),
     })
 
@@ -250,15 +239,13 @@ export const actions = {
       return fail(500, {
         errorMessage: "Unknown error. If this persists please contact us.",
         fullName,
-        companyName,
-        website,
+        username
       })
     }
 
     return {
       fullName,
-      companyName,
-      website,
+      username
     }
   },
   signout: async ({ locals: { supabase, getSession } }) => {

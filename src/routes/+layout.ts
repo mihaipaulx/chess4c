@@ -44,10 +44,7 @@ export const _hasFullProfile = (
   if (!profile.full_name) {
     return false
   }
-  if (!profile.company_name) {
-    return false
-  }
-  if (!profile.website) {
+  if (!profile.username) {
     return false
   }
 

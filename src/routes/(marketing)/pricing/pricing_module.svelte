@@ -7,50 +7,50 @@
   export let currentPlanId: string = ""
   export let center = true
 
-  type PlanFeatureRow = {
-    name: string
-    freeIncluded?: boolean
-    proIncluded?: boolean
-    freeString?: string
-    proString?: string
-    header?: boolean
-  }
+  // type PlanFeatureRow = {
+  //   name: string
+  //   freeIncluded?: boolean
+  //   proIncluded?: boolean
+  //   freeString?: string
+  //   proString?: string
+  //   header?: boolean
+  // }
 
-  const planFeatures: PlanFeatureRow[] = [
-    {
-      name: "Section 1",
-      header: true,
-    },
-    {
-      name: "Feature 1",
-      freeIncluded: true,
-      proIncluded: true,
-    },
-    {
-      name: "Feature 2",
-      freeIncluded: false,
-      proIncluded: true,
-    },
-    {
-      name: "Feature 3",
-      freeString: "3",
-      proString: "Unlimited",
-    },
-    {
-      name: "Section 2",
-      header: true,
-    },
-    {
-      name: "Feature 4",
-      freeIncluded: true,
-      proIncluded: true,
-    },
-    {
-      name: "Feature 5",
-      freeIncluded: false,
-      proIncluded: true,
-    },
-  ]
+  // const planFeatures: PlanFeatureRow[] = [
+  //   {
+  //     name: "Section 1",
+  //     header: true,
+  //   },
+  //   {
+  //     name: "Feature 1",
+  //     freeIncluded: true,
+  //     proIncluded: true,
+  //   },
+  //   {
+  //     name: "Feature 2",
+  //     freeIncluded: false,
+  //     proIncluded: true,
+  //   },
+  //   {
+  //     name: "Feature 3",
+  //     freeString: "3",
+  //     proString: "Unlimited",
+  //   },
+  //   {
+  //     name: "Section 2",
+  //     header: true,
+  //   },
+  //   {
+  //     name: "Feature 4",
+  //     freeIncluded: true,
+  //     proIncluded: true,
+  //   },
+  //   {
+  //     name: "Feature 5",
+  //     freeIncluded: false,
+  //     proIncluded: true,
+  //   },
+  // ]
 </script>
 
 <div
@@ -104,7 +104,7 @@
   {/each}
 </div>
 
-<h1 class="text-2xl font-bold text-center mt-24">Pricing FAQ</h1>
+<!-- <h1 class="text-2xl font-bold text-center mt-24">Pricing FAQ</h1>
 <div class="flex place-content-center">
   <div class="join join-vertical max-w-xl py-6 mx-auto">
     <div class="collapse collapse-arrow join-item border border-primary">
@@ -252,4 +252,4 @@
       {/each}
     </tbody>
   </table>
-</div>
+</div> -->

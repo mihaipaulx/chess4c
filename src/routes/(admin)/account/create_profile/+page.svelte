@@ -10,8 +10,7 @@
 
   let loading = false
   let fullName: string = profile?.full_name ?? ""
-  let companyName: string = profile?.company_name ?? ""
-  let website: string = profile?.website ?? ""
+  let username: string = profile?.username ?? ""
 
   const fieldError = (liveForm: FormAccountUpdateResult, name: string) => {
     let errors = liveForm?.errorFields ?? []
@@ -62,35 +61,18 @@
         </div>
 
         <div class="mt-4">
-          <label for="companyName">
-            <span class="text-l text-center">Company Name</span>
+          <label for="username">
+            <span class="text-l text-center">Username</span>
           </label>
           <input
-            id="companyName"
-            name="companyName"
+            id="username"
+            name="username"
             type="text"
-            placeholder="Company name"
-            class="{fieldError(form, 'companyName')
+            placeholder="Username"
+            class="{fieldError(form, 'username')
               ? 'input-error'
               : ''} mt-1 input input-bordered w-full max-w-xs"
-            value={form?.companyName ?? companyName}
-            maxlength="50"
-          />
-        </div>
-
-        <div class="mt-4">
-          <label for="website">
-            <span class="text-l text-center">Company Website</span>
-          </label>
-          <input
-            id="website"
-            name="website"
-            type="text"
-            placeholder="Company website"
-            class="{fieldError(form, 'website')
-              ? 'input-error'
-              : ''} mt-1 input input-bordered w-full max-w-xs"
-            value={form?.website ?? website}
+            value={form?.username ?? username}
             maxlength="50"
           />
         </div>
