@@ -45,7 +45,7 @@
         </div>
       </div>
     </div>
-    <div class="container py-3 lg:py-6">
+    <div class="container py-3 lg:py-3">
       <slot />
     </div>
   </div>

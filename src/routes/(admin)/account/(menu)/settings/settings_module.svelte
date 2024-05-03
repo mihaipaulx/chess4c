@@ -47,9 +47,9 @@
   }
 </script>
 
-<div class="card p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row shadow">
+<div class="card p-6 pb-7 mt-12 mr-8 max-w-full flex flex-col md:flex-row shadow">
   {#if title}
-    <div class="text-xl font-bold mb-3 w-48 flex-none">{title}</div>
+    <div class="text-xl font-bold w-48 flex-none">{title}</div>
   {/if}
 
   <div class="w-full min-w-48">
@@ -75,46 +75,50 @@
         </div>
       {/if}
       <form
-        class="form-widget flex flex-col"
+        class="form-widget flex flex-row items-start"
         method="POST"
         action={formTarget}
         use:enhance={handleSubmit}
       >
-        {#each fields as field}
-          {#if field.label}
-            <label for={field.id}>
-              <span class="text-sm text-gray-500">{field.label}</span>
-            </label>
-          {/if}
-          {#if editable}
-            <input
-              id={field.id}
-              name={field.id}
-              type={field.inputType ?? "text"}
-              disabled={!editable}
-              placeholder={field.placeholder ?? field.label ?? ""}
-              class="{fieldError($page?.form, field.id)
-                ? 'input-error'
-                : ''} input-sm mt-1 input input-bordered w-full max-w-xs mb-3 text-base py-4"
-              value={$page.form ? $page.form[field.id] : field.initialValue}
-              maxlength={field.maxlength ? field.maxlength : null}
-            />
-          {:else}
-            <div class="text-lg mb-3">{field.initialValue}</div>
-          {/if}
-        {/each}
+        <div class="flex flex-col gap-3">
+          {#each fields as field}
+            <div>
+              {#if field.label}
+                <label for={field.id} class="">
+                  <span class="text-sm text-gray-500">{field.label}</span>
+                </label>
+              {/if}
+              {#if editable}
+                <input
+                  id={field.id}
+                  name={field.id}
+                  type={field.inputType ?? "text"}
+                  disabled={!editable}
+                  placeholder={field.placeholder ?? field.label ?? ""}
+                  class="{fieldError($page?.form, field.id)
+                    ? 'input-error'
+                    : ''} input-sm input input-bordered w-full max-w-xs mt-3 text-base py-4"
+                  value={$page.form ? $page.form[field.id] : field.initialValue}
+                  maxlength={field.maxlength ? field.maxlength : null}
+                />
+              {:else}
+                <div class="text-lg">{field.initialValue}</div>
+              {/if}
+            </div> 
+          {/each}
+        </div>
 
         {#if $page?.form?.errorMessage}
-          <p class="text-red-700 text-sm font-bold mt-1">
+          <p class="text-red-700 text-sm font-bold mx-6 mt-8">
             {$page?.form?.errorMessage}
           </p>
         {/if}
 
         {#if editable}
-          <div>
+          <div class="ml-auto">
             <button
               type="submit"
-              class="ml-auto btn btn-sm mt-3 min-w-[145px] {dangerous
+              class="btn btn-sm min-w-[145px] {dangerous
                 ? 'btn-error'
                 : 'btn-success'}"
               disabled={loading}
@@ -130,7 +134,7 @@
           </div>
         {:else}
           <!-- !editable -->
-          <a href={editLink} class="mt-1">
+          <a href={editLink} class="ml-auto mt-1">
             <button
               class="btn btn-outline btn-sm {dangerous
                 ? 'btn-error'
@@ -142,16 +146,18 @@
         {/if}
       </form>
     {:else}
-      <!-- showSuccess -->
-      <div>
-        <div class="text-l font-bold">{successTitle}</div>
-        <div class="text-base">{successBody}</div>
+      <div class="flex flex-row items-start">
+        <!-- showSuccess -->
+        <div>
+          <div class="text-l font-bold">{successTitle}</div>
+          <div class="text-base">{successBody}</div>
+        </div>
+        <a href="/account/settings" class="ml-auto">
+          <button class="btn btn-outline btn-sm min-w-[145px]">
+            Return to Settings
+          </button>
+        </a>
       </div>
-      <a href="/account/settings">
-        <button class="btn btn-outline btn-sm mt-3 min-w-[145px]">
-          Return to Settings
-        </button>
-      </a>
     {/if}
   </div>
 </div>

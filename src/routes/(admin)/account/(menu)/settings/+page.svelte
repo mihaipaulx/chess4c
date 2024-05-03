@@ -14,8 +14,6 @@
   <title>Settings</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Settings</h1>
-
 <SettingsModule
   title="Profile"
   editable={false}
@@ -25,7 +23,7 @@
       id: "username",
       label: "Username",
       initialValue: profile?.username ?? "",
-    }
+    },
   ]}
   editButtonTitle="Edit Profile"
   editLink="/account/settings/edit_profile"

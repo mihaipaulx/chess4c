@@ -15,12 +15,11 @@
   <title>Edit Profile</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Settings</h1>
-
 <SettingsModule
   editable={true}
   title="Edit Profile"
   successTitle="Saved Profile"
+  successBody="Your profile has been saved."
   formTarget="/account/api?/updateProfile"
   fields={[
     {
@@ -28,14 +27,14 @@
       label: "Name",
       initialValue: profile?.full_name ?? "",
       placeholder: "Your full name",
-      maxlength: 50
+      maxlength: 50,
     },
     {
       id: "username",
       label: "Username",
       initialValue: profile?.username ?? "",
       placeholder: "Your username",
-      maxlength: 50
-    }
+      maxlength: 50,
+    },
   ]}
 />
