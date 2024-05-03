@@ -1,8 +1,8 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../../config"
   import { page } from "$app/stores"
   import { error } from "@sveltejs/kit"
   import { sortedBlogPosts, type BlogPost } from "./../posts"
-  import { WebsiteName } from "../../../../config"
 
   let currentPost: BlogPost | null = null
   for (const post of sortedBlogPosts) {
@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-  <title>{pageTitle}</title>
+  <title>{WebsiteName} | {pageTitle}</title>
   <meta name="description" content={pageDescription} />
 
   <!-- Facebook -->

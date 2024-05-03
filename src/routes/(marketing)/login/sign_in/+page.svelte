@@ -25,8 +25,8 @@
 </script>
 
 <svelte:head>
-  <title>{WebsiteName}</title>
-  <meta name="description" content="{WebsiteName} - Sign In" />
+  <title>{WebsiteName} | Sign In</title>
+  <meta name="description" content="{WebsiteName} | Sign In" />
 </svelte:head>
 
 {#if $page.url.searchParams.get("verified") == "true"}

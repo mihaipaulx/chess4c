@@ -61,7 +61,7 @@
         </li>
       {:else}
         <li class="md:mx-2"><a href="/dashboard">Dashboard</a></li>
-        <li class="md:mx-2"><a href="/puzzle">Puzzles</a></li>
+        <li class="md:mx-2"><a href="/puzzles">Puzzles</a></li>
         <li class="md:mx-2"><a href="/account/settings">Account</a></li>
       {/if}
     </ul>

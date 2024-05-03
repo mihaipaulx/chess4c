@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-  <title>{WebsiteName}</title>
-  <meta name="description" content="{WebsiteName} Dashboard" />
+  <title>{WebsiteName} | Dashboard</title>
+  <meta name="description" content="{WebsiteName} | Dashboard" />
 </svelte:head>
 
 <div class="grid container mx-auto px-6 place-items-start min-h-[100vh] py-[20vh]">

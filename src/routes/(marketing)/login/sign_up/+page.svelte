@@ -7,8 +7,8 @@
 </script>
 
 <svelte:head>
-  <title>{WebsiteName}</title>
-  <meta name="description" content="{WebsiteName} - Sign Up" />
+  <title>{WebsiteName} | Sign Up</title>
+  <meta name="description" content="{WebsiteName} | Sign Up" />
 </svelte:head>
 
 <h1 class="text-2xl font-bold mb-6">Sign Up</h1>

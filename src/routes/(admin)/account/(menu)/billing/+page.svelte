@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../../../config"
   import { getContext } from "svelte"
   import type { Writable } from "svelte/store"
   import SettingsModule from "../settings/settings_module.svelte"
@@ -20,9 +21,9 @@
 </script>
 
 <svelte:head>
-  <title>Billing</title>
+  <title>{WebsiteName} | Billing</title>
+  <meta name="description" content="{WebsiteName} | Billing" />
 </svelte:head>
-
 
 {#if !data.isActiveCustomer}
   <div class="mt-12">

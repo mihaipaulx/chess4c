@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../config"
   import { Auth } from "@supabase/auth-ui-svelte"
   import { sharedAppearance, oauthProviders } from "../login_config"
 
@@ -6,7 +7,8 @@
 </script>
 
 <svelte:head>
-  <title>Forgot Password</title>
+  <title>{WebsiteName} | Forgot Password</title>
+  <meta name="description" content="{WebsiteName} | Forgot Password" />
 </svelte:head>
 
 <h1 class="text-2xl font-bold mb-6">Forgot Password</h1>

@@ -1,9 +1,10 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../config"
   import { sortedBlogPosts, blogInfo } from "./posts"
 </script>
 
 <svelte:head>
-  <title>{blogInfo.name}</title>
+  <title>{WebsiteName} | {blogInfo.name}</title>
   <meta name="description" content="Our blog posts." />
 </svelte:head>
 

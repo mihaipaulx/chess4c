@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../../config"
   import { enhance, applyAction } from "$app/forms"
   import type { SubmitFunction } from "@sveltejs/kit"
 
@@ -38,6 +39,11 @@
     }
   }
 </script>
+
+<svelte:head>
+  <title>{WebsiteName} | Contact</title>
+  <meta name="description" content="{WebsiteName} | Contact" />
+</svelte:head>
 
 <div
   class="mx-auto my-4 mx-auto place-items-center text-center content-center min-h-[100vh] py-[20vh]"

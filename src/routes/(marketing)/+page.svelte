@@ -183,7 +183,7 @@
 
 <svelte:head>
   <title>{WebsiteName}</title>
-  <meta name="description" content="{WebsiteName} Home Page" />
+  <meta name="description" content="{WebsiteName}" />
 </svelte:head>
 
 {#if !profile}

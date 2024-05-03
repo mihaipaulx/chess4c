@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../../config"
   import "../../../../app.css"
   import { enhance, applyAction } from "$app/forms"
   import type { SubmitFunction } from "@sveltejs/kit"
@@ -28,7 +29,8 @@
 </script>
 
 <svelte:head>
-  <title>Create Profile</title>
+  <title>{WebsiteName} | Create Profile</title>
+  <meta name="description" content="{WebsiteName} | Create Profile" />
 </svelte:head>
 
 <div

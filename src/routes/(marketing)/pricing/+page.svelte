@@ -1,11 +1,11 @@
 <script lang="ts">
-  import PricingModule from "./pricing_module.svelte"
   import { WebsiteName } from "./../../../config"
+  import PricingModule from "./pricing_module.svelte"
 </script>
 
 <svelte:head>
-  <title>Pricing</title>
-  <meta name="description" content="Pricing details for {WebsiteName}" />
+  <title>{WebsiteName} | Pricing</title>
+  <meta name="description" content="{WebsiteName} | Pricing" />
 </svelte:head>
 
 <div class="min-h-[100vh] py-[20vh] px-4">

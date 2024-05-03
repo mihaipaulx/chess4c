@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../../../../config"
   import { getContext } from "svelte"
   import type { Writable } from "svelte/store"
   import SettingsModule from "../settings_module.svelte"
@@ -11,8 +12,10 @@
 </script>
 
 <svelte:head>
-  <title>Delete Account</title>
+  <title>{WebsiteName} | Delete Account</title>
+  <meta name="description" content="{WebsiteName} | Delete Account" />
 </svelte:head>
+
 
 <SettingsModule
   title="Delete Account"

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../../../../config"
   import { page } from "$app/stores"
   import { getContext } from "svelte"
   import type { Writable } from "svelte/store"
@@ -42,8 +43,10 @@
 </script>
 
 <svelte:head>
-  <title>Change Password</title>
+  <title>{WebsiteName} | Change Password</title>
+  <meta name="description" content="{WebsiteName} | Change Password" />
 </svelte:head>
+
 
 {#if hasPassword}
   <SettingsModule

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../../../../config"
   import SettingsModule from "../settings_module.svelte"
   import { getContext } from "svelte"
   import type { Writable } from "svelte/store"
@@ -12,7 +13,8 @@
 </script>
 
 <svelte:head>
-  <title>Edit Profile</title>
+  <title>{WebsiteName} | Edit Profile</title>
+  <meta name="description" content="{WebsiteName} | Edit Profile" />
 </svelte:head>
 
 <SettingsModule

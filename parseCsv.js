@@ -6,7 +6,7 @@ const inputPath = 'puzzles.csv.zst';
 const outputPath = 'puzzles.csv';
 
 let rowCount = 0;
-let maxRowCount = 11
+let maxRowCount = 1000
 
 fs.createReadStream(inputPath)
   .pipe(ZSTDDecompress())
@@ -15,9 +15,9 @@ fs.createReadStream(inputPath)
     // Increment the row counter
     rowCount++;
 
-    // If row counter reaches maxRowCount, end the algorithm
-    if (rowCount > maxRowCount) {
-      console.log('Reached row limit. Stopping.');
+    // If row counter reaches maxRowCount, end the algorithm, + 1 is added since first row has headers
+    if (rowCount > maxRowCount + 1) {
+      console.log('Reached row limit, stopping...');
       process.exit(); // End the process
     }
 

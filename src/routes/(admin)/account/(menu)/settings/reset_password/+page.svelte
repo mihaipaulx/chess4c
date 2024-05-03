@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../../../../config"
   import { getContext } from "svelte"
   import type { Writable } from "svelte/store"
   import SettingsModule from "../settings_module.svelte"
@@ -8,8 +9,10 @@
 </script>
 
 <svelte:head>
-  <title>Reset Password</title>
+  <title>{WebsiteName} | Reset Password</title>
+  <meta name="description" content="{WebsiteName} | Reset Password" />
 </svelte:head>
+
 
 <h1 class="text-2xl font-bold mb-6">Settings</h1>
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WebsiteName } from "../../../../../../config"
   import SettingsModule from "../settings_module.svelte"
   import { getContext } from "svelte"
   import type { Writable } from "svelte/store"
@@ -12,8 +13,10 @@
 </script>
 
 <svelte:head>
-  <title>Change Email</title>
+  <title>{WebsiteName} | Change Email</title>
+  <meta name="description" content="{WebsiteName} | Change Email" />
 </svelte:head>
+
 
 <h1 class="text-2xl font-bold mb-6">Settings</h1>
 
