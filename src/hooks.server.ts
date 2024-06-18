@@ -21,6 +21,7 @@ export const handle: Handle = async ({ event, resolve }) => {
     { auth: { persistSession: false } },
   )
 
+
   /**
    * A convenience helper so we can just call await getSession() instead const { data: { session } } = await supabase.auth.getSession()
    */

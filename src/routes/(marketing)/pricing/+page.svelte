@@ -8,7 +8,7 @@
   <meta name="description" content="{WebsiteName} | Pricing" />
 </svelte:head>
 
-<div class="min-h-[100vh] py-[20vh] px-4">
+<div class="min-h-[100vh] py-[15vh] px-4">
   <div>
     <h1 class="text-3xl font-bold text-center">Pricing plans</h1>
     <h2 class="text-xl text-center text-slate-500 mt-1 pb-3">

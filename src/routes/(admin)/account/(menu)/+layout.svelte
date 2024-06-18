@@ -18,7 +18,7 @@
   }
 </script>
 
-<div class="drawer lg:drawer-open container mx-auto py-[20vh] min-h-[100vh]">
+<div class="drawer lg:drawer-open container mx-auto py-[15vh] min-h-[100vh]">
   <input id="admin-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
     <div class="navbar bg-base-100 lg:hidden">

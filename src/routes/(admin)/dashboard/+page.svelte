@@ -7,7 +7,7 @@
   <meta name="description" content="{WebsiteName} | Dashboard" />
 </svelte:head>
 
-<div class="grid container mx-auto px-6 place-items-start min-h-[100vh] py-[20vh]">
+<div class="grid container mx-auto px-6 place-items-start min-h-[100vh] py-[15vh]">
   <h1 class="text-2xl font-bold mb-1">Dashboard</h1>
   <div class="my-6">
     <h1 class="text-xl font-bold mb-1">Users</h1>

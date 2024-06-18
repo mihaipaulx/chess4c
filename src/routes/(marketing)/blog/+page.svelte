@@ -8,7 +8,7 @@
   <meta name="description" content="Our blog posts." />
 </svelte:head>
 
-<div class="py-8 lg:py-12 px-6 max-w-lg mx-auto">
+<div class="px-6 max-w-lg mx-auto min-h-[100vh] py-[15vh]">
   <div
     class="text-3xl lg:text-5xl font-medium text-primary flex gap-3 items-baseline text-center place-content-center"
   >

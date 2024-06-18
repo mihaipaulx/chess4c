@@ -19,9 +19,9 @@
         invalidate("supabase:auth")
       }
 
-        console.log(event);
+        // console.log(event);
 
-      if (event === "SIGNED_OUT" || event === "SIGNED_IN") {
+      if (event === "SIGNED_OUT" || event === "INITIAL_SESSION") {
         invalidateAll()
       }
     })
@@ -114,8 +114,14 @@
   >
     <nav>
       <span class="footer-title opacity-80">Explore</span>
+      {#if !profile}
       <a class="link link-hover mb-1" href="/">Landing</a>
       <a class="link link-hover my-1" href="/pricing">Pricing</a>
+      {:else}
+      <a class="link link-hover mb-1" href="/dashboard">Dashboard</a>
+      <a class="link link-hover my-1" href="/account/settings">Account</a>
+      <a class="link link-hover my-1" href="/puzzles">Puzzles</a>
+      {/if}
       <a class="link link-hover my-1" href="/blog">Blog</a>
       <a class="link link-hover my-1" href="/contact_us">Contact Us</a>
     </nav>

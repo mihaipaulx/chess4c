@@ -12,9 +12,9 @@ export const load: PageServerLoad = async ({
 
   const userId = session.user.id
 
-  const { data, error: userRatingError } = await supabaseServiceRole
+  const { data: user, error: userRatingError } = await supabaseServiceRole
     .from("profiles")
-    .select("rating")
+    .select()
     .filter("id", "eq", userId)
     .limit(1)
     .single()
@@ -25,32 +25,34 @@ export const load: PageServerLoad = async ({
     throw userRatingError;
   }
 
-  const userRating = data?.rating
+  const userRating = user?.rating
 
   console.log("User rating: ", userRating)
 
-  const [minPuzzleRating, maxPuzzleRating] = [userRating - 50, userRating + 50]
+  const [minPuzzleRating, maxPuzzleRating] = [userRating - 100, userRating + 100]
 
   console.log(`Puzzle rating range: [${minPuzzleRating}, ${maxPuzzleRating}]`);
-  
 
-  const { data: randomPuzzles, error: randomPuzzlesError } = await supabaseServiceRole
+  const { data: randomPuzzle, error: randomPuzzleError } = await supabaseServiceRole
     .from('random_puzzles')
     .select()
     .gte("rating", minPuzzleRating)
     .lte("rating", maxPuzzleRating)
+    .limit(1)
+    .single()
 
-  if (randomPuzzlesError) {
-    console.error('Error fetching random puzzle:', randomPuzzlesError.message);
+  if (randomPuzzleError) {
+    console.error('Error fetching random puzzle:', randomPuzzleError.message);
     // Handle error appropriately, perhaps redirecting to an error page
-    throw randomPuzzlesError;
+    throw randomPuzzleError;
   }
   
-  console.log('Random puzzles:', randomPuzzles.length);
+  console.log('Random puzzles:', randomPuzzle);
 
   return {
     props: {
-      randomPuzzles
+      puzzle: randomPuzzle,
+      user: user
     }
   };
 
