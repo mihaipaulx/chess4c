@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { WebsiteName } from "../../../config"
+  import { WebsiteName } from "../../../../config"
   import { Auth } from "@supabase/auth-ui-svelte"
   import { sharedAppearance, oauthProviders } from "../login_config"
 

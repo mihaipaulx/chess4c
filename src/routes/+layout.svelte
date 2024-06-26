@@ -19,9 +19,13 @@
         invalidate("supabase:auth")
       }
 
-        // console.log(event);
+      // console.log(event);
 
-      if (event === "SIGNED_OUT" || event === "INITIAL_SESSION") {
+      if (
+        event === "SIGNED_OUT" ||
+        event === "SIGNED_IN" ||
+        event === "INITIAL_SESSION"
+      ) {
         invalidateAll()
       }
     })
@@ -44,7 +48,9 @@
   ></div>
 {/if}
 
-<header class="navbar bg-base-100 container mx-auto fixed top-0 left-0 right-0 w-full z-50">
+<header
+  class="navbar bg-base-100 container mx-auto fixed top-0 left-0 right-0 w-full z-50"
+>
   <div class="flex-1">
     <a class="btn btn-ghost normal-case text-xl" href={logoHref}>Chess4c</a>
   </div>
@@ -54,10 +60,7 @@
         <li class="md:mx-2"><a href="/blog">Blog</a></li>
         <li class="md:mx-2"><a href="/pricing">Pricing</a></li>
         <li class="md:mx-4">
-          <a
-            href="/login"
-            class="border border-primary">Get Started</a
-          >
+          <a href="/login" class="border border-primary">Get Started</a>
         </li>
       {:else}
         <li class="md:mx-2"><a href="/dashboard">Dashboard</a></li>
@@ -91,10 +94,7 @@
         <li class="md:mx-2"><a href="/blog">Blog</a></li>
         <li class="md:mx-2"><a href="/pricing">Pricing</a></li>
         <li class="md:mx-4">
-          <a
-            href="/account"
-            class="border border-primary">Get Started</a
-          >
+          <a href="/account" class="border border-primary">Get Started</a>
         </li>
       </ul>
     </div>
@@ -115,24 +115,19 @@
     <nav>
       <span class="footer-title opacity-80">Explore</span>
       {#if !profile}
-      <a class="link link-hover mb-1" href="/">Landing</a>
-      <a class="link link-hover my-1" href="/pricing">Pricing</a>
+        <a class="link link-hover mb-1" href="/">Landing</a>
+        <a class="link link-hover my-1" href="/pricing">Pricing</a>
       {:else}
-      <a class="link link-hover mb-1" href="/dashboard">Dashboard</a>
-      <a class="link link-hover my-1" href="/account/settings">Account</a>
-      <a class="link link-hover my-1" href="/puzzles">Puzzles</a>
+        <a class="link link-hover mb-1" href="/dashboard">Dashboard</a>
+        <a class="link link-hover my-1" href="/account/settings">Account</a>
+        <a class="link link-hover my-1" href="/puzzles">Puzzles</a>
       {/if}
       <a class="link link-hover my-1" href="/blog">Blog</a>
       <a class="link link-hover my-1" href="/contact_us">Contact Us</a>
     </nav>
     <aside class="justify-items-end">
       <span class="footer-title opacity-80">Legal</span>
-      <a
-        class="link link-hover max-w-[260px]"
-        href="/"
-      >
-        Privacy Policy
-      </a>
+      <a class="link link-hover max-w-[260px]" href="/"> Privacy Policy </a>
     </aside>
   </footer>
 </div>
